@@ -1,0 +1,29 @@
+{
+  "name": "dawgnet",
+  "version": "0.1.0",
+  "description": "Hello, this is dog.",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "lint": "eslint lib/*.js test/*.js",
+    "pretest": "npm run lint",
+    "test": "tape test/*.test.js"
+  },
+  "keywords": [
+    "generator-npm-pasta",
+    "tile-reduce"
+  ],
+  "author": "rodowi",
+  "license": "ISC",
+  "repository": "rodowi/dawgnet",
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "tile-reduce": "^3.1.1"
+  }
+}
