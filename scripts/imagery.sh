@@ -1,4 +1,4 @@
 #!/bin/bash
 
 mkdir imagery
-cat data/z16.txt | head -n1000 | xt | ./lib/get-imagery.js
+gshuf -n 1000 data/z16.txt | xt | ./lib/get-imagery.js
