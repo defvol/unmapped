@@ -1,4 +1,4 @@
 #!/bin/bash
 
-node lib/index.js > data/highways.json
-cat data/highways.json | tippecanoe -z12 -Z12 -o data/highways.mbtiles
+node lib/index.js > data/z16.txt
+cat data/z16.txt | mercantile shapes | fio collect > data/tiles.geojson
