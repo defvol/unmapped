@@ -4,7 +4,7 @@
   "description": "Hello, this is dog.",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node lib/index.js",
+    "start": "node lib/find-tiles.js",
     "lint": "eslint lib/*.js test/*.js",
     "pretest": "npm run lint",
     "test": "tape test/*.test.js"
