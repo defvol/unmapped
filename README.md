@@ -5,6 +5,6 @@ Hello, this is dog.
 Running
 
 ```bash
-% ./data.sh
-% ./density.sh
+% ./scripts/data.sh
+% ./scripts/density.sh
 ```
