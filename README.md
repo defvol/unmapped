@@ -2,6 +2,16 @@
 
 Finding unmapped roads from satellite imagery.
 
+### Rationale
+
+![missing roads](https://raw.githubusercontent.com/rodowi/unmapped/master/screenshots/missing-roads.jpg)
+
+_Still many roads to map in OSM._
+
+This project trains a [ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network) using OSM as ground truth, to automate the search of unmapped roads in OSM.
+
+### Instructions
+
 Generate training set
 
 ```bash
