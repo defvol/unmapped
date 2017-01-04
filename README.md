@@ -21,6 +21,11 @@ Generate training set
 % ./scripts/imagery.sh
 ```
 
+Tiles containing highways in OSM.
+
+![map](https://github.com/rodowi/unmapped/raw/master/screenshots/map.jpg)
+![sat](https://github.com/rodowi/unmapped/raw/master/screenshots/sat.jpg)
+
 Training
 
 ```bash
