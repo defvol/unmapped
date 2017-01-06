@@ -66,3 +66,5 @@ I tensorflow/examples/label_image/main.cc:205] noway (1): 0.0924149
 ![unmapped](https://raw.githubusercontent.com/rodowi/unmapped/master/screenshots/11820-26685-16.jpg)
 
 [90% chance there's an unmapped road at 16/11820/26685](https://b.tiles.mapbox.com/v4/mapbox.satellite/16/11856/26822@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlpIdEpjOHcifQ.Cldl4wq_T5KOgxhLvbjE-w)
+
+Go to [Wiki](https://github.com/rodowi/unmapped/wiki/Results) to see more prediction results.
