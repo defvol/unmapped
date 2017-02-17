@@ -72,7 +72,7 @@ Go to [Wiki](https://github.com/rodowi/unmapped/wiki/Results) to see more predic
 ### Running a server
 
 ```bash
-% docker run -p 9000:9000 -p 3000:3000 -it rodowi/inception_serving
+% docker run -p 9000:9000 -p 3000:3000 --name=inception_container -it rodowi/inception_serving
 
 root@711a84710476:/serving# bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --port=9000 --model_name=inception --model_base_path=inception-export &> inception_log &
 
