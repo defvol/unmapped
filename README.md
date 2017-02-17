@@ -68,3 +68,19 @@ I tensorflow/examples/label_image/main.cc:205] noway (1): 0.0924149
 [90% chance there's an unmapped road at 16/11820/26685](https://b.tiles.mapbox.com/v4/mapbox.satellite/16/11856/26822@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlpIdEpjOHcifQ.Cldl4wq_T5KOgxhLvbjE-w)
 
 Go to [Wiki](https://github.com/rodowi/unmapped/wiki/Results) to see more prediction results.
+
+### Running a server
+
+```bash
+% docker run -p 9000:9000 -p 3000:3000 -it rodowi/inception_serving
+
+root@711a84710476:/serving# bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --port=9000 --model_name=inception --model_base_path=inception-export &> inception_log &
+
+root@711a84710476:/unmapped# npm i && ./lib/server.js
+Listening for tile requests in port 3000
+```
+
+```bash
+> curl localhost:3000?tile=16/11820/26685
+CAT
+```
