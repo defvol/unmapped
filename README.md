@@ -24,7 +24,9 @@ Tiles containing highways in OSM.
 ![map](https://github.com/rodowi/unmapped/raw/master/screenshots/map.jpg)
 ![sat](https://github.com/rodowi/unmapped/raw/master/screenshots/sat.jpg)
 
-Training
+#### Training
+
+_Still working on documenting this part_
 
 ```bash
 ✗ docker run -it -v $HOME/c/unmapped/imagery:/tf_files/satellite gcr.io/tensorflow/tensorflow:latest-devel
@@ -55,7 +57,7 @@ Creating bottleneck at /tf_files/bottlenecks/highway/11455-26498-16.jpg.txt
 Final test accuracy = 88.8%
 ```
 
-Prediction
+#### Prediction
 
 ```bash
 root@5cca0bc5d586:/tensorflow# bazel-bin/tensorflow/examples/label_image/label_image --graph=/tf_files/retrained_graph.pb --labels=/tf_files/retrained_labels.txt --output_layer=final_result --image=/tf_files/satellite/11856-26822-16.jpg
@@ -69,12 +71,10 @@ I tensorflow/examples/label_image/main.cc:205] noway (1): 0.0924149
 
 Go to [Wiki](https://github.com/rodowi/unmapped/wiki/Results) to see more prediction results.
 
-### Running a server
+#### Running a prediction server
 
 ```bash
-% docker run -p 9000:9000 -p 3000:3000 --name=inception_container -it rodowi/inception_serving
-
-root@711a84710476:/serving# bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --port=9000 --model_name=inception --model_base_path=inception-export &> inception_log &
+% docker run -p 3000:3000 --name=inception_container -it rodowi/inception_serving
 
 root@711a84710476:/unmapped# npm i && ./lib/server.js
 Listening for tile requests in port 3000
