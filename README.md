@@ -83,6 +83,7 @@ Listening for tile requests in port 3000
 ```
 
 ```bash
-> curl localhost:3000?tile=16/11820/26685
-CAT
+➜  unmapped git:(serve) ✗ curl -s localhost:3000?tile=16/11820/26685 | grep "way "
+2017-03-02 15:52:59.785471: I tensorflow/examples/label_image/main.cc:206] highway (0): 0.957238
+2017-03-02 15:52:59.785531: I tensorflow/examples/label_image/main.cc:206] noway (1): 0.0427618
 ```
