@@ -1,6 +1,6 @@
 # unmapped
 
-This project trains a [ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network) using OSM as ground truth, to automate the search of unmapped roads in OSM.
+Retrains [inception-v3](https://github.com/tensorflow/models/tree/master/inception) ConvNet on labeled imagery from mapbox-satellite to automate the search for unmapped roads in OSM.
 
 See [rodowi/mapscan](https://github.com/rodowi/mapscan) for a point-and-click interface to this classifier.
 
