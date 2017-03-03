@@ -2,6 +2,8 @@
 
 This project trains a [ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network) using OSM as ground truth, to automate the search of unmapped roads in OSM.
 
+See [rodowi/mapscan](https://github.com/rodowi/mapscan) for a point-and-click interface to this classifier.
+
 ### Rationale
 
 ![missing roads](https://raw.githubusercontent.com/rodowi/unmapped/master/screenshots/missing-roads.jpg)
