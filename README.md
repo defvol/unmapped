@@ -2,6 +2,8 @@
 
 This project trains a [ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network) using OSM as ground truth, to automate the search of unmapped roads in OSM.
 
+See [rodowi/mapscan](https://github.com/rodowi/mapscan) for a point-and-click interface to this classifier.
+
 ### Rationale
 
 ![missing roads](https://raw.githubusercontent.com/rodowi/unmapped/master/screenshots/missing-roads.jpg)
@@ -24,7 +26,9 @@ Tiles containing highways in OSM.
 ![map](https://github.com/rodowi/unmapped/raw/master/screenshots/map.jpg)
 ![sat](https://github.com/rodowi/unmapped/raw/master/screenshots/sat.jpg)
 
-Training
+#### Training
+
+_Still working on documenting this part_
 
 ```bash
 ✗ docker run -it -v $HOME/c/unmapped/imagery:/tf_files/satellite gcr.io/tensorflow/tensorflow:latest-devel
@@ -55,7 +59,7 @@ Creating bottleneck at /tf_files/bottlenecks/highway/11455-26498-16.jpg.txt
 Final test accuracy = 88.8%
 ```
 
-Prediction
+#### Prediction
 
 ```bash
 root@5cca0bc5d586:/tensorflow# bazel-bin/tensorflow/examples/label_image/label_image --graph=/tf_files/retrained_graph.pb --labels=/tf_files/retrained_labels.txt --output_layer=final_result --image=/tf_files/satellite/11856-26822-16.jpg
@@ -68,3 +72,17 @@ I tensorflow/examples/label_image/main.cc:205] noway (1): 0.0924149
 [90% chance there's an unmapped road at 16/11820/26685](https://b.tiles.mapbox.com/v4/mapbox.satellite/16/11856/26822@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlpIdEpjOHcifQ.Cldl4wq_T5KOgxhLvbjE-w)
 
 Go to [Wiki](https://github.com/rodowi/unmapped/wiki/Results) to see more prediction results.
+
+#### Running a prediction server
+
+```bash
+% docker run -p 3000:3000 --name=inception_container -it rodowi/inception_serving
+
+root@711a84710476:/unmapped# npm i && ./lib/server.js
+Listening for tile requests in port 3000
+```
+
+```bash
+> curl localhost:3000?tile=16/11820/26685
+CAT
+```
